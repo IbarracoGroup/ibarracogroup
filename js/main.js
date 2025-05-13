@@ -1,0 +1,1 @@
+console.log("Sitio web de Ibarra Co Group cargado correctamente");
