@@ -84,3 +84,23 @@ body {
   margin: 0 0.5rem;
   font-size: 1.5rem;
 }
+
+ul {
+  list-style: none; /* Elimina los puntos */
+  padding-left: 0;  /* Elimina la sangría */
+  margin-left: 0;
+  text-align: left; /* Alinea el contenido a la izquierda */
+  max-width: 800px;
+  margin: 0 auto;    /* Centra horizontalmente el bloque */
+}
+
+ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+ul li strong {
+  display: inline-block;
+  min-width: 230px;
+}
