@@ -1,17 +1,24 @@
+<!-- ✅ index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Consultoría empresarial y transformación digital con soluciones integrales en Microsoft 365, Power Apps, Power Automate y Azure.">
+  <meta property="og:title" content="Ibarra Co Group - Consultoría Estratégica y Tecnología">
+  <meta property="og:description" content="Consultoría empresarial con soluciones integrales en Microsoft 365, Power Apps, Power Automate y Azure.">
+  <meta property="og:image" content="assets/images/portada.jpg">
+  <meta property="og:url" content="https://www.ibarracogroup.com">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Ibarra Co Group - Consultoría Estratégica y Tecnología</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="js/main.js" defer></script>
 </head>
-<body>
 
+<body>
   <header class="header">
     <img src="assets/images/logo.png" alt="Logo Ibarra Co Group" class="logo" />
     <nav class="navbar">
@@ -32,28 +39,26 @@
 
   <section class="section" id="servicios">
     <h2>Servicios de Consultoría</h2>
-    <ul>
-    <li>🔹 Consultoría estratégica en transformación digital y eficiencia operativa</li>
-    <li>🔹 Automatización inteligente de procesos con Microsoft Power Automate</li>
-    <li>🔹 Desarrollo de soluciones empresariales con Power Apps low-code</li>
-    <li>🔹 Implementación de sistemas en la nube con Azure y SQL Server</li>
-    <li>🔹 Integración avanzada con el ecosistema Microsoft 365 (SharePoint, Outlook, Planner, Teams)</li>
-    <li>🔹 Diseño y despliegue de sitios web corporativos con dominio personalizado</li>
-    <li>🔹 Soporte técnico integral y acompañamiento continuo post-implementación</li>
+    <ul class="card-list">
+      <li data-aos="fade-up"><strong>🔹 Consultoría estratégica:</strong> transformación digital y eficiencia operativa.</li>
+      <li data-aos="fade-up" data-aos-delay="100"><strong>🔹 Automatización:</strong> flujos con Power Automate e inteligencia operativa.</li>
+      <li data-aos="fade-up" data-aos-delay="200"><strong>🔹 Aplicaciones:</strong> sistemas low-code con Power Apps para ventas y gestión.</li>
+      <li data-aos="fade-up" data-aos-delay="300"><strong>🔹 Infraestructura:</strong> soluciones escalables con Azure y SQL Server.</li>
+      <li data-aos="fade-up" data-aos-delay="400"><strong>🔹 Ecosistema 365:</strong> Outlook, SharePoint, Planner, Forms y más.</li>
+      <li data-aos="fade-up" data-aos-delay="500"><strong>🔹 Páginas web:</strong> diseño, hosting y dominio personalizado.</li>
+      <li data-aos="fade-up" data-aos-delay="600"><strong>🔹 Soporte & mentoría:</strong> acompañamiento post implementación.</li>
     </ul>
   </section>
 
   <section class="section" id="portafolio">
     <h2>Portafolio</h2>
     <p>Estos son algunos de nuestros emprendimientos y productos digitales en desarrollo:</p>
-    <ul>
-      <li><strong>🌐 www.ibarracogroup.com</strong> – Página principal de consultoría estratégica</li>
-      <!--
-      <li><strong>🕯️ velaraices.com</strong> – Ecommerce emocional de velas artesanales</li>
-      <li><strong>🐶 chocopet.com</strong> – Plataforma divertida para productos de mascotas</li>
-      -->
-      <li><strong>📊 apps.ibarracogroup.com</strong> – Sistema SaaS para ventas y CRM</li>
-      <li><strong>📰 blog.ibarracogroup.com</strong> – Artículos, tips y posicionamiento en transformación digital</li>
+    <ul class="card-list">
+      <li data-aos="fade-right"><strong>🌐 www.ibarracogroup.com</strong><br> Página principal de consultoría estratégica</li>
+      <!-- <li><strong>🕯️ velaraices.com</strong> – Ecommerce emocional de velas artesanales</li>
+      <li><strong>🐶 chocopet.com</strong> – Plataforma divertida para productos de mascotas</li> -->
+      <li data-aos="fade-right" data-aos-delay="100"><strong>📊 apps.ibarracogroup.com</strong><br> Sistema SaaS para ventas y CRM</li>
+      <li data-aos="fade-right" data-aos-delay="200"><strong>📰 blog.ibarracogroup.com</strong><br> Artículos, tips y posicionamiento en transformación digital</li>
     </ul>
   </section>
 
@@ -71,5 +76,9 @@
     <p>&copy; 2025 Ibarra Co Group. Consultoría + Tecnología + Resultados.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
