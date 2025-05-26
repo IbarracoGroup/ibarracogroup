@@ -3,25 +3,24 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - main  # Se ejecuta solo en push a main
+      - main
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build Next.js app
+      - name: Build the app
         run: npm run build
 
       - name: Deploy to Azure Static Web Apps
@@ -30,6 +29,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"               # Tu carpeta raíz de la app
-          api_location: ""                # Si no tienes backend, deja vacío
-          output_location: ".next"        # Carpeta de salida Next.js
+          app_location: "/"
+          api_location: ""
+          output_location: ".next"
+          app_build_command: "npm run build"
