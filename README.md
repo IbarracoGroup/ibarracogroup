@@ -1,55 +1,36 @@
-# Ibarra Co Group - Consultoría Estratégica y Transformación Digital
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Bienvenido al repositorio oficial del sitio web de **Ibarra Co Group**, consultora especializada en transformación digital, automatización de procesos y soluciones con Microsoft 365, Power Apps, Power Automate y Azure.
+## Getting Started
 
-## 🌐 Sitio Web
-[www.ibarracogroup.com](https://www.ibarracogroup.com)
+First, run the development server:
 
-## 📂 Estructura del Proyecto
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-IbarracoGroup/
-├── index.html
-├── agradecimiento.html
-├── politica.html
-├── favicon.ico
-├── robots.txt
-├── /css/
-│ └── styles.css
-├── /js/
-│ └── main.js
-├── /assets/
-│ ├── /images/
-│ │ ├── portada.png
-│ │ └── logo.png
-│ └── /fonts/
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## ⚙️ Tecnologías Usadas
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **HTML5** – Estructura del sitio
-- **CSS3** – Estilos y diseño responsive
-- **JavaScript** – Lógica e interacciones
-- **AOS (Animate on Scroll)** – Efectos visuales animados
-- **FormSubmit** – Gestión de formularios de contacto sin backend
-- **Azure Static Web Apps** – Hosting confiable y escalable
-- **GitHub Actions** – CI/CD automático
+## Learn More
 
-## ✉️ Formulario de Contacto
+To learn more about Next.js, take a look at the following resources:
 
-El formulario usa [FormSubmit](https://formsubmit.co/) para enviar correos directamente a contacto@ibarracogroup.com sin necesidad de un backend. Recuerda registrar tu correo en la plataforma para habilitar el servicio.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## ✅ Política de Confidencialidad
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Incluye una sección clara sobre el manejo de datos en el archivo `politica.html`.
+## Deploy on Vercel
 
-## 🚀 Despliegue
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Este sitio está conectado a [Azure Static Web Apps](https://learn.microsoft.com/es-es/azure/static-web-apps/overview), y se despliega automáticamente con cada cambio en la rama `main`.
-
-## 👨‍💼 Autor
-
-**George Ibarra Salas**  
-Consultor en Tecnología y Transformación Digital  
-[contacto@ibarracogroup.com](mailto:contacto@ibarracogroup.com)
-
----
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
