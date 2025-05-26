@@ -281,3 +281,11 @@ form .btn:hover {
   color: #5eea9f;
   text-decoration: underline;
 }
+
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}

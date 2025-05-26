@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "route": "/politica",
+      "rewrite": "/politica.html"
+    },
+    {
+      "route": "/agradecimiento",
+      "rewrite": "/agradecimiento.html"
+    }
+  ]
+}
