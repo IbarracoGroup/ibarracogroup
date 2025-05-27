@@ -1,0 +1,12 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/css/*", "/js/*", "/favicon.ico"]
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/_not-found",
+      "statusCode": 404
+    }
+  }
+}
