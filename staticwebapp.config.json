@@ -1,6 +1,6 @@
 {
   "navigationFallback": {
-    "rewrite": "/index.html",
+    "rewrite": "/",
     "exclude": ["/assets/*", "/favicon.ico", "/robots.txt"]
   },
   "responseOverrides": {
