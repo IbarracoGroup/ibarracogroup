@@ -1,20 +1,19 @@
-// app/components/Header.tsx
-'use client'
+'use client';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="header">
-      <div className="container">
-        <img src="/assets/logo.png" alt="Ibarra Co Group" className="logo" />
-        <nav className="navbar">
-          <Link href="#inicio">Inicio</Link>
-          <Link href="#servicios">Servicios</Link>
-          <Link href="#portafolio">Portafolio</Link>
-          <Link href="#contacto">Contáctanos</Link>
-        </nav>
-      </div>
+    <header className="bg-black text-white py-4 px-6 flex justify-between items-center shadow-md fixed top-0 w-full z-50">
+      <Link href="/" className="text-xl font-bold tracking-wide">
+        Ibarra Co Group
+      </Link>
+      <nav className="space-x-6 hidden md:flex">
+        <a href="#inicio" className="hover:text-[#bfa173]">Inicio</a>
+        <a href="#servicios" className="hover:text-[#bfa173]">Servicios</a>
+        <a href="#portafolio" className="hover:text-[#bfa173]">Portafolio</a>
+        <a href="#formulario" className="hover:text-[#bfa173]">Contáctanos</a>
+      </nav>
     </header>
-  )
+  );
 }

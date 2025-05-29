@@ -1,10 +1,21 @@
-/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tipografía moderna */
+
 :root {
   --primary: #000000;
   --secondary: #bfa173;
   --light: #ffffff;
   --accent: #c1ff3d;
-  --font: 'Segoe UI', sans-serif;
+  --font: 'Inter', 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,33 +23,63 @@ body {
   font-family: var(--font);
   background: var(--light);
   color: #333;
+  line-height: 1.6;
 }
 
+/* Secciones principales */
 section {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   max-width: 1200px;
   margin: auto;
 }
 
+/* Enlaces */
 a {
   color: var(--secondary);
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  opacity: 0.8;
 }
 
+/* Botones */
 button, .btn {
   background: var(--secondary);
   color: white;
   padding: 0.8rem 1.5rem;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover, .btn:hover {
+  background: #a48c5a;
 }
 
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url('/assets/images/portada.png') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 3rem;
+  border-radius: 12px;
+  max-width: 600px;
+}
+
+/* Testimonios */
 .testimonials {
   background-color: #f9f9f9;
 }
-
 .testimonial-cards {
   display: grid;
   gap: 2rem;
@@ -47,7 +88,6 @@ button, .btn {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .testimonial-card {
   background-color: white;
   padding: 2rem;
@@ -56,24 +96,20 @@ button, .btn {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .testimonial-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.1);
 }
-
 .testimonial-card p {
   font-style: italic;
   margin-bottom: 1rem;
   color: #333;
 }
-
 .testimonial-card h4 {
   margin: 0;
   font-size: 1.2rem;
   color: var(--primary-color, #000);
 }
-
 .testimonial-card small {
   color: #777;
 }

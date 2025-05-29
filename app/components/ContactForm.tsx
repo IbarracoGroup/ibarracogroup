@@ -5,7 +5,7 @@ export default function ContactForm() {
   return (
     <section className="contact-form" id="contacto">
       <h2>Lleva tu negocio al futuro</h2>
-      <form action="https://formsubmit.co/contacto@ibarracogroup.com" method="POST">
+      <form action="https://formsubmit.co/1bfd78b70e61ed1e947bfff2a085011e" method="POST">
         <div className="form-group">
           <input type="text" name="nombre" placeholder="Nombre" required />
           <input type="text" name="apellido" placeholder="Apellido" required />
