@@ -1,9 +1,9 @@
 // app/layout.tsx
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter  } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const geist = Inter ({ subsets: ['latin'], weight: ['400', '700'] })
+const inter = Inter({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata: Metadata = {
   title: 'Ibarra Co Group - Consultoría Estratégica y Tecnología',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={geist.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

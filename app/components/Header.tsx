@@ -17,3 +17,14 @@ export default function Header() {
     </header>
   );
 }
+<div className="hidden md:flex items-center space-x-4">
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+    <i className="fab fa-facebook-f text-white hover:text-[#bfa173] text-lg"></i>
+  </a>
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+    <i className="fab fa-instagram text-white hover:text-[#bfa173] text-lg"></i>
+  </a>
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+    <i className="fab fa-linkedin-in text-white hover:text-[#bfa173] text-lg"></i>
+  </a>
+</div>
