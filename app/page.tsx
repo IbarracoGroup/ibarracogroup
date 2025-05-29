@@ -10,8 +10,6 @@ import Clients from './components/Clients'
 import SuccessCases from './components/SuccessCases'
 import CtaBanner from './components/CtaBanner'
 
-
-
 export default function HomePage() {
   return (
     <>
@@ -22,9 +20,9 @@ export default function HomePage() {
       <ContactForm />
       <Testimonials />
       <Clients />
-      <Footer />
       <SuccessCases />
       <CtaBanner />
+      <Footer />      
     </>
   )
 }
