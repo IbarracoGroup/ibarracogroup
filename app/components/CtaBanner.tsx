@@ -2,15 +2,20 @@
 
 export default function CtaBanner() {
   return (
-    <section className="bg-secondary text-white py-16 text-center">
-      <h2 className="text-3xl font-bold mb-4">¿Listo para transformar tu negocio?</h2>
-      <p className="mb-6">Conversemos sobre tus objetivos y cómo podemos ayudarte a lograr resultados sostenibles.</p>
+    <section className="bg-[#bfa173] text-white py-16 px-4 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        ¿Listo para transformar tu negocio?
+      </h2>
+      <p className="text-lg mb-6 max-w-xl mx-auto">
+        Descubre cómo nuestra consultoría puede ayudarte a crecer con tecnología, estrategia y resultados sostenibles.
+      </p>
       <a
-        href="https://wa.me/51999908810"
-        className="bg-black hover:bg-gray-800 transition px-6 py-3 text-white rounded-lg font-semibold"
+        href="#formulario"
+        className="inline-block bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition"
       >
-        Contáctanos vía WhatsApp
+        Contáctanos ahora
       </a>
     </section>
   )
 }
+
