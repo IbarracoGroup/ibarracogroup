@@ -5,7 +5,7 @@ import { Connection, Request as SqlRequest, TYPES } from 'tedious'
 const config = {
   server: 'ibarracogroupserver.database.windows.net',
   authentication: {
-    type: 'default',
+    type: 'default' as const, // 👈 esta parte es la clave
     options: {
       userName: 'ibarraco_admin', // 👈 tu usuario real
       password: 'Ib@rrac0SQL2025_2345!', // 👈 tu contraseña real
