@@ -26,7 +26,7 @@ export default function ContactForm() {
     }
 
     try {
-      const res = await fetch('/api/form', {
+      const res = await fetch('https://ibarracogroup-api.azurewebsites.net/api/registrarformulario', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
