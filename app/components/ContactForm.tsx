@@ -1,11 +1,57 @@
-// app/components/ContactForm.tsx
 'use client'
 
+import { useState } from 'react'
+
 export default function ContactForm() {
+  const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSuccess(false)
+    setError(null)
+    setLoading(true)
+
+    const data = new FormData(e.currentTarget)
+
+    const payload = {
+      nombre: data.get('nombre'),
+      apellido: data.get('apellido'),
+      email: data.get('email'),
+      empresa: data.get('empresa'),
+      pais: data.get('pais'),
+      mensaje: data.get('mensaje'),
+      boletin: data.get('boletin') === 'on'
+    }
+
+    try {
+      const res = await fetch('/api/form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+
+      const result = await res.json()
+
+      if (result.ok) {
+        setSuccess(true)
+        e.currentTarget.reset()
+      } else {
+        throw new Error(result.error || 'Error al enviar')
+      }
+    } catch (err: any) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section className="contact-form" id="contacto">
       <h2>Lleva tu negocio al futuro</h2>
-      <form action="https://formsubmit.co/1bfd78b70e61ed1e947bfff2a085011e" method="POST">
+
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input type="text" name="nombre" placeholder="Nombre" required />
           <input type="text" name="apellido" placeholder="Apellido" required />
@@ -37,9 +83,12 @@ export default function ContactForm() {
           Al completar este formulario, aceptas nuestra{' '}
           <a href="/politica.html" target="_blank">Política de Confidencialidad</a>.
         </p>
-        <button type="submit" className="btn">Enviar</button>
-        <input type="hidden" name="_next" value="https://www.ibarracogroup.com/agradecimiento.html" />
-        <input type="hidden" name="_captcha" value="false" />
+        <button type="submit" className="btn" disabled={loading}>
+          {loading ? 'Enviando...' : 'Enviar'}
+        </button>
+
+        {success && <p className="text-green-600 mt-3">✅ ¡Formulario enviado correctamente!</p>}
+        {error && <p className="text-red-600 mt-3">⚠️ {error}</p>}
       </form>
     </section>
   )
