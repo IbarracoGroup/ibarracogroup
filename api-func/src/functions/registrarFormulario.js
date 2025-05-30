@@ -1,35 +1,33 @@
 const { app } = require('@azure/functions');
 const { Connection, Request, TYPES } = require('tedious');
 
-// Reemplaza con tus credenciales reales
-const config = {
-  server: 'ibarracogroupserver.database.windows.net',
-  authentication: {
-    type: 'default',
-    options: {
-      userName: 'ibarraco_admin',
-      password: 'Ib@rrac0SQL2025_2345!',
-    },
-  },
-  options: {
-    database: 'ibarracogroupdb',
-    encrypt: true,
-  },
-};
-
 app.http('registrarFormulario', {
   methods: ['POST'],
   authLevel: 'anonymous',
   handler: async (req, context) => {
     const { nombre, apellido, email, empresa, pais, mensaje, boletin } = await req.json();
 
+    const config = {
+      server: 'ibarracogroupserver.database.windows.net',
+      authentication: {
+        type: 'default',
+        options: {
+          userName: 'ibarraco_admin',
+          password: 'Ib@rrac0SQL2025_2345!'
+        }
+      },
+      options: {
+        database: 'ibarracogroupdb',
+        encrypt: true
+      }
+    };
+
     return new Promise((resolve) => {
       const connection = new Connection(config);
-
       connection.on('connect', (err) => {
         if (err) {
           context.log('❌ Error de conexión:', err);
-          resolve({ status: 500, body: 'Error de conexión a la base de datos' });
+          resolve({ status: 500, body: 'Error de conexión a BD: ' + err.message });
           return;
         }
 
@@ -40,10 +38,10 @@ app.http('registrarFormulario', {
 
         const request = new Request(sql, (err) => {
           if (err) {
-            context.log('❌ Error SQL:', err);
-            resolve({ status: 500, body: 'Error en la consulta SQL' });
+            context.log('❌ Error al insertar:', err);
+            resolve({ status: 500, body: 'Error SQL: ' + err.message });
           } else {
-            resolve({ status: 200, body: 'Formulario enviado correctamente' });
+            resolve({ status: 200, body: JSON.stringify({ ok: true }) });
           }
           connection.close();
         });
@@ -61,5 +59,5 @@ app.http('registrarFormulario', {
 
       connection.connect();
     });
-  },
+  }
 });
