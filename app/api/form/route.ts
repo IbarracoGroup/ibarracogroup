@@ -3,16 +3,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Connection, Request as SqlRequest, TYPES } from 'tedious'
 
 const config = {
-  server: 'TU-SERVIDOR.database.windows.net',
+  server: 'ibarracogroupserver.database.windows.net',
   authentication: {
     type: 'default',
     options: {
-      userName: 'TU-USUARIO',
-      password: 'TU-PASSWORD',
+      userName: 'ibarraco_admin', // 👈 tu usuario real
+      password: 'Ib@rrac0SQL2025_2345!', // 👈 tu contraseña real
     },
   },
   options: {
-    database: 'TU-BASEDEDATOS',
+    database: 'ibarracogroupdb',
     encrypt: true,
   },
 }
