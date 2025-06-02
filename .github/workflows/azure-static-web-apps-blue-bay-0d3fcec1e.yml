@@ -33,4 +33,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"         # raíz del proyecto
+          api_location: "api-func"     # agrega esto
           output_location: ".next"  # carpeta de salida de Next.js
