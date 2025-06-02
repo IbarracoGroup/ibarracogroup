@@ -1,5 +1,13 @@
 const { app } = require('@azure/functions');
 const { Connection, Request, TYPES } = require('tedious');
+const { DefaultAzureCredential } = require('@azure/identity');
+
+// Obtener token desde la identidad administrada
+async function getAccessToken() {
+  const credential = new DefaultAzureCredential();
+  const tokenResponse = await credential.getToken('https://database.windows.net/');
+  return tokenResponse.token;
+}
 
 app.http('registrarFormulario', {
   methods: ['POST'],
@@ -7,13 +15,14 @@ app.http('registrarFormulario', {
   handler: async (req, context) => {
     const { nombre, apellido, email, empresa, pais, mensaje, boletin } = await req.json();
 
+    const accessToken = await getAccessToken();
+
     const config = {
       server: 'ibarracogroupserver.database.windows.net',
       authentication: {
-        type: 'default',
+        type: 'azure-active-directory-access-token',
         options: {
-          userName: 'ibarraco_admin',
-          password: 'Ib@rrac0SQL2025_2345!'
+          token: accessToken
         }
       },
       options: {
