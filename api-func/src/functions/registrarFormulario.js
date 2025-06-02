@@ -24,10 +24,15 @@ app.http('registrarFormulario', {
 
     return new Promise((resolve) => {
       const connection = new Connection(config);
+
       connection.on('connect', (err) => {
         if (err) {
           context.log('❌ Error de conexión:', err);
-          resolve({ status: 500, body: 'Error de conexión a BD: ' + err.message });
+          resolve({
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ok: false, error: 'Error de conexión a BD: ' + err.message })
+          });
           return;
         }
 
@@ -39,9 +44,17 @@ app.http('registrarFormulario', {
         const request = new Request(sql, (err) => {
           if (err) {
             context.log('❌ Error al insertar:', err);
-            resolve({ status: 500, body: 'Error SQL: ' + err.message });
+            resolve({
+              status: 500,
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ ok: false, error: 'Error SQL: ' + err.message })
+            });
           } else {
-            resolve({ status: 200, body: JSON.stringify({ ok: true }) });
+            resolve({
+              status: 200,
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ ok: true })
+            });
           }
           connection.close();
         });
