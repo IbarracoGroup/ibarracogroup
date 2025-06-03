@@ -11,7 +11,7 @@ module.exports = {
       colors: {
         primary: "#000000",
         secondary: "#bfa173",
-        accent: "#c1ff3d"
+        accent: '#ccff00' // tono más cercano al verde neón
       },
     },
   },
