@@ -10,5 +10,6 @@
     "@azure/functions": "^4.0.0",
     "tedious": "^18.6.1"
   },
-  "main": "src/{index.js,functions/*.js}"
+  "main": "registrarFormulario/registrarFormulario.js"
+
 }
