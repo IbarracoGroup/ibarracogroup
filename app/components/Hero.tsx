@@ -7,8 +7,9 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-white"
-      style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+     /*  className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-white"*/
+      className="relative w-full bg-cover bg-center h-[90vh] flex items-center justify-center text-white"
+      style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
     >
       {/* Capa oscura semitransparente */}
       <div className="absolute inset-0 bg-black/60 z-0"></div>
