@@ -36,7 +36,10 @@ export default function ContactForm() {
 
       if (result.ok) {
         setSuccess(true)
-        ;(e.currentTarget as HTMLFormElement).reset()
+
+        const form = e.target as HTMLFormElement
+        if (form) form.reset()
+
         setTimeout(() => setSuccess(false), 5000)
       } else {
         throw new Error(result.error || 'Error al enviar')
@@ -94,4 +97,3 @@ export default function ContactForm() {
     </section>
   )
 }
-
