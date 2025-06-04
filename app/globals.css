@@ -4,8 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tipografía moderna */
+/* Solución al warning "Unknown at rule @tailwind" en VS Code:
+   Instala la extensión oficial: Tailwind CSS IntelliSense
+   Link: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+*/
 
+/* Tipografía moderna */
 :root {
   --primary: #000000;
   --secondary: #bfa173;
