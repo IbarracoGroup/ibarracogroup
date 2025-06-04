@@ -1,4 +1,3 @@
-// app/components/Hero.tsx
 'use client'
 
 import { motion } from 'framer-motion'
@@ -7,11 +6,18 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative w-screen h-[90vh] bg-cover bg-center flex items-center justify-center text-white overflow-hidden"
-      style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
+      className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden"
     >
-      {/* Capa oscura semitransparente */}
-      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      {/* Imagen de fondo */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="/assets/images/hero-bg.jpg"
+          alt="Fondo hero"
+          className="w-full h-full object-cover"
+        />
+        {/* Capa oscura encima de la imagen */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
 
       {/* Contenido animado con entrada elegante */}
       <motion.div
