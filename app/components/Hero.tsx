@@ -16,7 +16,7 @@ export default function Hero() {
       {/* Imagen de fondo */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/assets/images/portada.png" // Usa aquí tu imagen real de portada
+          src="/assets/images/hero-bg.jpg" // Usa aquí tu imagen real de portada
           alt="Ciudad digital"
           className="w-full h-full object-cover"
         />
