@@ -7,8 +7,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-     /*  className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-white"*/
-      className="relative w-full bg-cover bg-center h-[90vh] flex items-center justify-center text-white"
+      className="relative w-screen h-[90vh] bg-cover bg-center flex items-center justify-center text-white overflow-hidden"
       style={{ backgroundImage: "url('/assets/images/hero-bg.jpg')" }}
     >
       {/* Capa oscura semitransparente */}
@@ -16,7 +15,7 @@ export default function Hero() {
 
       {/* Contenido animado con entrada elegante */}
       <motion.div
-        className="relative z-10 text-center px-4 max-w-3xl"
+        className="relative z-10 text-center px-4 max-w-3xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
