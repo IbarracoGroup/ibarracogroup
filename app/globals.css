@@ -62,24 +62,6 @@ button:hover, .btn:hover {
   background: #a48c5a;
 }
 
-/* Hero */
-.hero {
-  height: 100vh;
-  background: url('/assets/images/portada.png') no-repeat center center / cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  position: relative;
-  text-align: center;
-}
-.hero .overlay {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 3rem;
-  border-radius: 12px;
-  max-width: 600px;
-}
-
 /* Testimonios */
 .testimonials {
   background-color: #f9f9f9;
