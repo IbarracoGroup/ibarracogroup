@@ -25,9 +25,9 @@ export default function Header() {
           <img
             src="/assets/images/logo.png"
             /*alt="Logo Ibarra Co Group"*/
-            className="h-8 w-auto"
+            className="h-12 w-auto"
           />
-          <span>Ibarra Co Group</span>
+          <span className="text-lg md:text-xl">Ibarra Co Group</span>
         </Link>
 
         {/* Menú grande */}

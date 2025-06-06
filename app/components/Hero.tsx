@@ -24,10 +24,11 @@ export default function Hero() {
       </div>
 
       {/* Contenido alineado tipo Globant */}
-      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+
         {/* Texto alineado a la izquierda */}
         <motion.div
-          className="text-left max-w-2xl"
+          className="text-left max-w-2xl ml-4 md:ml-0"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -38,7 +39,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             Impulsamos tu <br /> transformación digital
           </h1>
-          <p className="text-lg md:text-xl text-gray-200">
+          <p className="text-lg md:text-xl text-gray-200 mb-6">
             Más que tecnología: soluciones, visión estratégica y resultados sostenibles.
           </p>
         </motion.div>
