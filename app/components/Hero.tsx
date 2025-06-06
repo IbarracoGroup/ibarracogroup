@@ -28,7 +28,7 @@ export default function Hero() {
 
         {/* Texto alineado a la izquierda */}
         <motion.div
-          className="text-left max-w-2xl ml-4 md:ml-0"
+          className="text-center max-w-2xl ml-4 md:ml-0"
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}

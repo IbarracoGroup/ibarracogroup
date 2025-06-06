@@ -19,7 +19,7 @@ export default function Header() {
         scrolled ? 'bg-white text-gray-900 shadow-md' : 'bg-black text-white'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl w-full px-4 py-4 flex items-center justify-between mx-auto">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 text-xl font-bold tracking-wide">
           <img
@@ -28,7 +28,7 @@ export default function Header() {
             className="h-12 w-auto"
           />
           <span className="text-lg md:text-xl">Ibarra Co Group</span>
-        </Link>
+        </Link>       
 
         {/* Menú grande */}
         <nav className="hidden md:flex space-x-8 font-semibold text-sm items-center">
