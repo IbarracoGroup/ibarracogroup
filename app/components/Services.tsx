@@ -3,56 +3,52 @@
 export default function Services() {
   const servicios = [
     {
-      titulo: 'Sistemas Administrativos y Operativos Inteligentes',
+      titulo: 'Sistemas de Gestión a Medida',
       descripcion:
-        'Diseñamos sistemas hechos a medida para optimizar tus procesos clave, integrando áreas como finanzas, RR.HH., ventas o logística.',
+        'Diseñamos plataformas inteligentes para integrar y optimizar procesos clave como finanzas, RR.HH., ventas o logística.',
     },
     {
-      titulo: 'Plataformas SaaS empresariales',
+      titulo: 'Plataformas SaaS escalables',
       descripcion:
-        'Creamos plataformas escalables para ofrecer servicios digitales sostenibles, bajo modelos de negocio recurrentes y eficientes.',
+        'Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.',
     },
     {
-      titulo: 'MVPs con Enfoque de Validación de Mercado',
+      titulo: 'MVPs para validar modelos de negocio',
       descripcion:
-        'Creamos Productos Mínimos Viables (MVPs) funcionales para probar hipótesis de negocio con rapidez y bajo costo.',
+        'Desarrollamos productos mínimos viables listos para validar hipótesis de mercado rápidamente y con bajo riesgo.',
     },
     {
-      titulo: 'Aplicaciones Móviles con Lógica de Negocio',
+      titulo: 'Apps móviles con lógica de negocio',
       descripcion:
-        'Desarrollamos aplicaciones móviles con lógica integrada a tus sistemas y procesos internos, listas para transformar la experiencia de usuarios y colaboradores.',
+        'Aplicaciones conectadas a tus sistemas internos, optimizando la experiencia de tus usuarios y equipos.',
     },
     {
-      titulo: 'Consultoría y acompañamiento estratégico',
+      titulo: 'Staffing Tecnológico Especializado',
       descripcion:
-        'Te guiamos con una mirada integral y ágil para implementar soluciones de alto impacto, con foco en transformación digital y cultura organizacional.',
+        'Integramos perfiles técnicos a tu equipo con agilidad, foco en resultados y alto estándar de calidad.',
     },
     {
-      titulo: 'Outsourcing Tecnológico Especializado',
+      titulo: 'Reclutamiento de Talento Tecnológico y Comercial',
       descripcion:
-        'Incorporamos profesionales técnicos a tu equipo según tus necesidades, con enfoque en resultados, eficiencia y calidad en cada entrega.',
+        'Seleccionamos perfiles técnicos, vendedores y personal operativo que se alineen con tu cultura y objetivos de negocio.',
+    },
+        {
+      titulo: 'Consultoría Estratégica en Transformación Digital',
+      descripcion:
+        'Acompañamos a tu equipo en la implementación de soluciones con mirada ágil, organizacional y orientada a resultados.',
     },
   ]
 
   return (
     <section 
       id="servicios" 
-      className="relative py-20 px-4 overflow-hidden text-white"
+      className="bg-gray-50 py-20 px-4 text-gray-800"
     >
-      {/* Imagen de fondo + capa oscura */}
-      <div className="absolute inset-0 -z-10">
-        <img
-          src="/assets/images/hero-bg.jpg"
-          alt="Fondo hero"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
 
       {/* Contenido principal */}
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          Servicios clave para tu empresa
+          Soluciones inteligentes y talento especializado para que tu empresa crezca con agilidad, eficiencia y enfoque en el futuro.
         </h2>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

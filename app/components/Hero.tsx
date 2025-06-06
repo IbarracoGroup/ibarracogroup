@@ -37,10 +37,10 @@ export default function Hero() {
             Empresa de consultoría digital
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            Impulsamos tu <br /> transformación digital
+            Transformamos empresas con tecnología, estrategia y talento
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-6">
-            Más que tecnología: soluciones, visión estratégica y resultados sostenibles.
+            Más que consultoría digital: integramos soluciones tecnológicas, visión estratégica y profesionales clave para lograr resultados sostenibles.
           </p>
         </motion.div>
 
