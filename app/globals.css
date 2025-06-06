@@ -31,7 +31,7 @@ body {
 }
 
 /* Secciones principales */
-section:not(#inicio {
+section:not(#inicio) {
   padding: 5rem 2rem;
   max-width: 1200px;
   margin: auto;
