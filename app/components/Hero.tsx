@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       {/* Contenido alineado tipo Globant */}
-      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col items-center justify-between gap-6">
 
         {/* Texto alineado a la izquierda */}
         <motion.div
@@ -46,7 +46,7 @@ export default function Hero() {
 
         {/* Botón alineado a la derecha */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
