@@ -24,7 +24,7 @@ export default function Header() {
         <Link href="/" className="flex items-center space-x-2 text-xl font-bold tracking-wide">
           <img
             src="/assets/images/logo.png"
-            alt="Logo Ibarra Co Group"
+            /*alt="Logo Ibarra Co Group"*/
             className="h-8 w-auto"
           />
           <span>Ibarra Co Group</span>
