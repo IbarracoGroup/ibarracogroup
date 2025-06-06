@@ -35,7 +35,18 @@ export default function Services() {
   ]
 
   return (
-    <section id="servicios" className="bg-gray-50 py-16 px-4">
+    <section 
+      id="servicios" 
+      className="bg-gray-50 py-16 px-4">
+      {/* Imagen de fondo */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="/assets/images/hero-bg.jpg"
+          alt="Fondo hero"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>        
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-800">
           Servicios clave para tu empresa
