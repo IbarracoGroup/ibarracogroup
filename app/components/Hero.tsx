@@ -1,31 +1,50 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+import * as THREE from 'three'
+import NET from 'vanta/dist/vanta.net.min'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
+  const vantaRef = useRef(null)
+  const [vantaEffect, setVantaEffect] = useState<any>(null)
+
   const scrollToForm = () => {
     const el = document.getElementById('contacto')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: vantaRef.current,
+          THREE: THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 500.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0xbfa173, // dorado suave
+          backgroundColor: 0x000000, // fondo negro
+        })
+      )
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy()
+    }
+  }, [vantaEffect])
+
   return (
     <section
       id="inicio"
       className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden"
+      ref={vantaRef}
     >
-      {/* Imagen de fondo */}
-      <div className="absolute inset-0 -z-10">
-        <img
-          src="/assets/images/hero-bg.jpg"
-          alt="Fondo hero"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50"></div>
-      </div>
-
       {/* Contenido alineado tipo Globant */}
       <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col items-center justify-between gap-6">
-
         {/* Texto alineado a la izquierda */}
         <motion.div
           className="text-center max-w-2xl ml-4 md:ml-0"
@@ -37,7 +56,7 @@ export default function Hero() {
             Empresa de consultoría digital
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            Transformamos empresas con tecnología, estrategia y talento
+            Transformamos empresas con <span className="text-green-400">tecnología</span>, estrategia y talento
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-6">
             Más que consultoría digital: integramos soluciones tecnológicas, visión estratégica y profesionales clave para lograr resultados sostenibles.
