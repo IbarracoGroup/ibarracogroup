@@ -19,7 +19,7 @@ export default function Header() {
         scrolled ? 'bg-white text-gray-900 shadow-md' : 'bg-black text-white'
       }`}
     >
-      <div className="max-w-7xl w-full px-4 py-4 flex items-center justify-between mx-auto">
+      <div className="w-full py-4 flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 text-xl font-bold tracking-wide">
           <img
