@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Solución al warning "Unknown at rule @tailwind" en VS Code:
-   Instala la extensión oficial: Tailwind CSS IntelliSense
-   Link: https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
-*/
-
 /* Tipografía moderna */
 :root {
   --primary: #000000;
@@ -25,7 +20,11 @@ html {
 body {
   margin: 0;
   font-family: var(--font);
-  background: var(--light);
+  background-image: url('/assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #333;
   line-height: 1.6;
 }
@@ -35,6 +34,9 @@ section:not(#inicio) {
   padding: 5rem 2rem;
   max-width: 1200px;
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.85); /* fondo semitransparente para legibilidad */
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
 }
 
 /* Enlaces */
