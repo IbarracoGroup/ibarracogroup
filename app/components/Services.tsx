@@ -3,9 +3,9 @@
 export default function Services() {
   const servicios = [
     {
-      titulo: 'Sistemas administrativos y operativos a medida',
+      titulo: 'Sistemas Administrativos y Operativos Inteligentes',
       descripcion:
-        'Optimiza procesos internos, mejora el control y centraliza la información crítica de tu operación con soluciones hechas a tu medida.',
+        'Diseñamos sistemas hechos a medida para optimizar tus procesos clave, integrando áreas como finanzas, RR.HH., ventas o logística.',
     },
     {
       titulo: 'Plataformas SaaS empresariales',
@@ -13,24 +13,24 @@ export default function Services() {
         'Creamos plataformas escalables para ofrecer servicios digitales sostenibles, bajo modelos de negocio recurrentes y eficientes.',
     },
     {
-      titulo: 'MVPs listos para validación con visión de negocio',
+      titulo: 'MVPs con Enfoque de Validación de Mercado',
       descripcion:
-        'Desarrollamos productos mínimos viables listos para testear en el mercado real, reduciendo riesgos y acelerando la validación.',
+        'Creamos Productos Mínimos Viables (MVPs) funcionales para probar hipótesis de negocio con rapidez y bajo costo.',
     },
     {
-      titulo: 'Aplicaciones móviles con lógica integrada',
+      titulo: 'Aplicaciones Móviles con Lógica de Negocio',
       descripcion:
-        'Diseñamos apps que no solo lucen bien, sino que están integradas a flujos de negocio, sistemas existentes y visión estratégica.',
+        'Desarrollamos aplicaciones móviles con lógica integrada a tus sistemas y procesos internos, listas para transformar la experiencia de usuarios y colaboradores.',
     },
     {
       titulo: 'Consultoría y acompañamiento estratégico',
       descripcion:
-        'Te guiamos desde el diagnóstico hasta la implementación y mejora continua de soluciones tecnológicas y procesos.',
+        'Te guiamos con una mirada integral y ágil para implementar soluciones de alto impacto, con foco en transformación digital y cultura organizacional.',
     },
     {
-      titulo: 'Outsourcing',
+      titulo: 'Outsourcing Tecnológico Especializado',
       descripcion:
-        'Sumamos talento técnico especializado a tu equipo bajo demanda, con foco en entregas, calidad y cumplimiento.',
+        'Incorporamos profesionales técnicos a tu equipo según tus necesidades, con enfoque en resultados, eficiencia y calidad en cada entrega.',
     },
   ]
 
@@ -44,7 +44,7 @@ export default function Services() {
           {servicios.map((servicio, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-shadow border border-blue-200"
+              className="bg-white p-6 rounded-xl border border-blue-200 shadow-md transform transition duration-300 hover:shadow-xl hover:scale-105"
             >
               <h3 className="text-xl font-semibold text-blue-700 mb-2">{servicio.titulo}</h3>
               <p className="text-gray-600 text-sm">{servicio.descripcion}</p>

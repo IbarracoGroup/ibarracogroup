@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative w-screen h-screen flex items-center justify-center text-white overflow-hidden"
+      className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden"
     >
       {/* Imagen de fondo */}
       <div className="absolute inset-0 -z-10">
@@ -20,38 +20,43 @@ export default function Hero() {
           alt="Fondo hero"
           className="w-full h-full object-cover"
         />
-        {/* Capa oscura más suave */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      {/* Contenido animado (unificado) */}
-      <motion.div
-        className="relative z-10 text-center px-4 max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <p className="text-base md:text-lg uppercase tracking-widest text-gray-200 mb-2">
-          Empresa de consultoría digital
-        </p>
-
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-          Impulsamos tu <br /> transformación digital
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-200 mb-6">
-          Más que tecnología: soluciones, visión estratégica y resultados sostenibles.
-        </p>
-
-        <motion.button
-          onClick={scrollToForm}
-          className="inline-block bg-lime-500 hover:bg-lime-600 text-black px-6 py-3 rounded font-semibold transition-transform transform hover:scale-105"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
+      {/* Contenido alineado tipo Globant */}
+      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Texto alineado a la izquierda */}
+        <motion.div
+          className="text-left max-w-2xl"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
         >
-          Contáctanos
-        </motion.button>
-      </motion.div>
+          <p className="text-sm md:text-base uppercase tracking-wide text-gray-200 mb-3">
+            Empresa de consultoría digital
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+            Impulsamos tu <br /> transformación digital
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200">
+            Más que tecnología: soluciones, visión estratégica y resultados sostenibles.
+          </p>
+        </motion.div>
+
+        {/* Botón alineado a la derecha */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <button
+            onClick={scrollToForm}
+            className="bg-lime-500 hover:bg-lime-600 text-black px-8 py-4 text-lg rounded font-bold transition-transform transform hover:scale-105 shadow-lg"
+          >
+            Contáctanos
+          </button>
+        </motion.div>
+      </div>
     </section>
   )
 }
