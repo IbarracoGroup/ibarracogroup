@@ -37,7 +37,7 @@ export default function Services() {
   return (
     <section 
       id="servicios" 
-      className="bg-gray-50 py-16 px-4">
+      className="relative bg-gray-50 py-16 px-4 overflow-hidden">
       {/* Imagen de fondo */}
       <div className="absolute inset-0 -z-10">
         <img
