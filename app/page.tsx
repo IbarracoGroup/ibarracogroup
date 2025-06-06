@@ -16,7 +16,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <Services />
-      <Portfolio />
+      {/*<Portfolio />*/}
       <ContactForm />
       <Testimonials />
       <Clients />
