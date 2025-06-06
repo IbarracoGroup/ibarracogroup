@@ -37,28 +37,32 @@ export default function Services() {
   return (
     <section 
       id="servicios" 
-      className="relative bg-gray-50 py-16 px-4 overflow-hidden">
-      {/* Imagen de fondo */}
+      className="relative py-20 px-4 overflow-hidden text-white"
+    >
+      {/* Imagen de fondo + capa oscura */}
       <div className="absolute inset-0 -z-10">
         <img
           src="/assets/images/hero-bg.jpg"
           alt="Fondo hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
-      </div>        
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      {/* Contenido principal */}
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">
           Servicios clave para tu empresa
         </h2>
+
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {servicios.map((servicio, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl border border-blue-200 shadow-md transform transition duration-300 hover:shadow-xl hover:scale-105"
+              className="bg-white bg-opacity-90 backdrop-blur-sm text-gray-800 p-6 rounded-xl border border-blue-200 shadow-md transform transition duration-300 hover:shadow-xl hover:scale-105"
             >
               <h3 className="text-xl font-semibold text-blue-700 mb-2">{servicio.titulo}</h3>
-              <p className="text-gray-600 text-sm">{servicio.descripcion}</p>
+              <p className="text-sm">{servicio.descripcion}</p>
             </div>
           ))}
         </div>
