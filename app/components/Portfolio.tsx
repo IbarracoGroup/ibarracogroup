@@ -6,18 +6,18 @@ import Image from 'next/image'
 export default function Portfolio() {
   const proyectos = [
     {
-      titulo: 'Página principal de consultoría estratégica',
+      titulo: 'Página web de farmacia',
       url: '🌐 www.ibarracogroup.com',
       imagen: '/assets/images/portafolio1.jpg'
     },
     {
-      titulo: 'Sistema SaaS para ventas y CRM',
-      url: '📊 apps.ibarracogroup.com',
+      titulo: 'Página web de clinica dental',
+      url: '📊 www.ibarracogroup.com',
       imagen: '/assets/images/portafolio2.jpg'
     },
     {
-      titulo: 'Blog y posicionamiento digital',
-      url: '📰 blog.ibarracogroup.com',
+      titulo: 'Página web de alimento para canes',
+      url: '📰 www.ibarracogroup.com',
       imagen: '/assets/images/portafolio3.jpg'
     }
   ]
