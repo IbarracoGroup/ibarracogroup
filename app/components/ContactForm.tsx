@@ -50,31 +50,29 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-[#020518] text-white py-20 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-        {/* Título */}
+    <section id="contacto" className="bg-gradient-to-br from-[#0f111a] to-[#1a1e2e] text-white py-24 px-6">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        {/* Título izquierdo */}
         <div>
-          <h2 className="text-5xl font-bold text-lime-400 leading-tight mb-6">
-            Lleva tu negocio<br />al futuro
+          <h2 className="text-4xl md:text-5xl font-bold text-lime-400 leading-tight mb-4">
+            Lleva tu negocio al <span className="text-white">futuro</span>
           </h2>
+          <p className="text-lg text-gray-300">
+            Conéctate con nosotros y descubre cómo acelerar tu transformación digital con tecnología y talento.
+          </p>
         </div>
 
-        {/* Formulario */}
+        {/* Formulario derecho */}
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="text" name="nombre" placeholder="Nombre" required
-              className="w-full px-4 py-3 bg-white text-black rounded-md focus:outline-none" />
-            <input type="text" name="apellido" placeholder="Apellido" required
-              className="w-full px-4 py-3 bg-white text-black rounded-md focus:outline-none" />
+            <input type="text" name="nombre" placeholder="Nombre" required className="input" />
+            <input type="text" name="apellido" placeholder="Apellido" required className="input" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="email" name="email" placeholder="Email" required
-              className="w-full px-4 py-3 bg-white text-black rounded-md focus:outline-none" />
-            <input type="text" name="empresa" placeholder="Compañía" required
-              className="w-full px-4 py-3 bg-white text-black rounded-md focus:outline-none" />
+            <input type="email" name="email" placeholder="Email" required className="input" />
+            <input type="text" name="empresa" placeholder="Empresa" required className="input" />
           </div>
-          <select name="pais" required
-            className="w-full px-4 py-3 bg-white text-black rounded-md focus:outline-none">
+          <select name="pais" required className="input">
             <option value="">Selecciona tu país...</option>
             <option value="Perú">Perú</option>
             <option value="México">México</option>
@@ -82,31 +80,32 @@ export default function ContactForm() {
             <option value="Argentina">Argentina</option>
             <option value="Otro">Otro</option>
           </select>
-          <textarea name="mensaje" placeholder="Mensaje" required
-            className="w-full px-4 py-3 bg-white text-black rounded-md h-32 focus:outline-none"></textarea>
+          <textarea name="mensaje" placeholder="Mensaje" required className="input h-32 resize-none"></textarea>
 
           <div className="flex items-start space-x-3">
-            <input type="checkbox" name="boletin" id="boletin"
-              className="mt-1" />
-            <label htmlFor="boletin" className="text-sm leading-snug">
-              Me gustaría registrarme con mi dirección de correo electrónico para recibir el boletín de Globant con actualizaciones, recursos valiosos y consejos útiles.
+            <input type="checkbox" name="boletin" id="boletin" className="mt-1" />
+            <label htmlFor="boletin" className="text-sm">
+              Me gustaría recibir el boletín con recursos útiles y actualizaciones.
             </label>
           </div>
 
-          <p className="text-sm">
-            Al completar este formulario, aceptas que estás de acuerdo con la{' '}
+          <p className="text-xs text-gray-400">
+            Al completar este formulario, aceptas nuestra{' '}
             <a href="/politica.html" target="_blank" className="text-lime-400 underline">
               política de confidencialidad
             </a>.
           </p>
 
-          <button type="submit" disabled={loading}
-            className="bg-lime-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-lime-300 transition duration-300">
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-lime-400 text-black font-bold px-8 py-3 rounded-md hover:bg-lime-300 transition"
+          >
             {loading ? 'Enviando...' : 'Enviar'}
           </button>
 
-          {success && <p className="text-green-400 text-sm">✅ ¡Formulario enviado correctamente!</p>}
-          {error && <p className="text-red-400 text-sm">⚠️ {error}</p>}
+          {success && <p className="text-green-400 text-sm mt-3">✅ ¡Formulario enviado correctamente!</p>}
+          {error && <p className="text-red-400 text-sm mt-3">⚠️ {error}</p>}
         </form>
       </div>
     </section>

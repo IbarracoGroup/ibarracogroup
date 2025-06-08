@@ -1,4 +1,5 @@
-// app/components/Testimonials.tsx
+'use client'
+
 export default function Testimonials() {
   const testimonios = [
     {
@@ -9,7 +10,7 @@ export default function Testimonials() {
     },
     {
       nombre: 'Ana',
-      cargo: 'CEO, XXX',
+      cargo: 'CEO',
       mensaje:
         'Nos ayudaron desde la planificación digital hasta la puesta en producción de nuestras aplicaciones. 100% recomendados.',
     },
@@ -22,16 +23,21 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="section testimonials" id="testimonios">
-      <h2>Testimonios</h2>
-      <div className="testimonial-cards">
-        {testimonios.map((t, i) => (
-          <div key={i} className="testimonial-card">
-            <p>"{t.mensaje}"</p>
-            <h4>{t.nombre}</h4>
-            <small>{t.cargo}</small>
-          </div>
-        ))}
+    <section id="testimonios" className="bg-white py-24 px-6">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Testimonios</h2>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {testimonios.map((t, i) => (
+            <div
+              key={i}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition"
+            >
+              <p className="italic text-gray-600 mb-4">"{t.mensaje}"</p>
+              <h4 className="font-bold text-gray-800">{t.nombre}</h4>
+              <small className="text-sm text-gray-500">{t.cargo}</small>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
