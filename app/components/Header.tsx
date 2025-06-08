@@ -24,7 +24,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center space-x-2 text-xl font-bold tracking-wide">
           <img
             src="/assets/images/logo.png"
             alt="Logo Ibarra Co Group"
@@ -38,7 +38,7 @@ export default function Header() {
           <a href="#inicio" className="hover:text-secondary transition">Inicio</a>
           <a href="#servicios" className="hover:text-secondary transition">Servicios</a>
           <a href="#portafolio" className="hover:text-secondary transition">Portafolio</a>
-          <a href="#formulario" className="hover:text-secondary transition">Contáctanos</a>
+          <a href="#contacto" className="hover:text-secondary transition">Contáctanos</a>
         </nav>
 
         {/* Redes sociales */}
@@ -70,8 +70,8 @@ export default function Header() {
           <a href="#inicio" className="block hover:text-secondary">Inicio</a>
           <a href="#servicios" className="block hover:text-secondary">Servicios</a>
           <a href="#portafolio" className="block hover:text-secondary">Portafolio</a>
-          <a href="#formulario" className="block hover:text-secondary">Contáctanos</a>
-        </nav>
+          <a href="#contacto" className="block hover:text-secondary">Contáctanos</a>
+        </nav> 
       )}
     </header>
   )
