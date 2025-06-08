@@ -1,51 +1,38 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import * as THREE from 'three'
-import NET from 'vanta/dist/vanta.net.min'
 import { motion } from 'framer-motion'
 
 export default function Hero() {
-  const vantaRef = useRef(null)
-  const [vantaEffect, setVantaEffect] = useState<any>(null)
-
   const scrollToForm = () => {
     const el = document.getElementById('contacto')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        NET({
-          el: vantaRef.current,
-          THREE: THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 500.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0xbfa173, // dorado suave
-          backgroundColor: 0x000000, // fondo negro
-        })
-      )
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy()
-    }
-  }, [vantaEffect])
-
   return (
     <section
       id="inicio"
-      className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden"
-      ref={vantaRef}
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center text-white"
     >
-      {/* Contenido alineado tipo Globant */}
-      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto flex flex-col items-center justify-between gap-6">
-        {/* Texto alineado a la izquierda */}
+      {/* 🎥 Video de fondo */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/assets/videos/hero-background.mp4" type="video/mp4" />
+        Tu navegador no soporta la reproducción de video.
+      </video>
+
+      {/* Capa oscura para mejorar contraste de texto */}
+      <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+
+      {/* Contenido principal */}
+      <div className="relative z-20 w-full max-w-7xl px-6 mx-auto flex flex-col items-center justify-between gap-6">
+        {/* Texto alineado tipo Globant */}
         <motion.div
           className="text-center max-w-2xl ml-4 md:ml-0"
           initial={{ opacity: 0, x: -30 }}
@@ -63,7 +50,7 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Botón alineado a la derecha */}
+        {/* Botón de contacto */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
