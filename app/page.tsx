@@ -18,8 +18,8 @@ export default function HomePage() {
       <Services />
       <Portfolio />
       <ContactForm />
-      <Testimonials />
-      <Clients />
+      {/*<Testimonials />*/}
+      {/*<Clients />*/}
       <SuccessCases />
       <CtaBanner />
       <Footer />
