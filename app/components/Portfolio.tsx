@@ -17,7 +17,8 @@ export default function Portfolio() {
     {
       titulo: 'Página web de alimento para canes',
       url: '📰 www.ibarracogroup.com',
-      imagen: '/assets/images/portafolio3.png'
+      
+      src: "/assets/images/portafolio3.png"
     }
   ]
 
