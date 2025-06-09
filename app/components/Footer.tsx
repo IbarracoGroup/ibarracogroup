@@ -24,7 +24,7 @@ export default function Footer() {
         {/* Contacto */}
         <div>
           <h4 className="font-semibold text-lg mb-3">Contacto</h4>
-          <p className="text-sm text-gray-400">info@ibarracogroup.com</p>
+          <p className="text-sm text-gray-400">contacto@ibarracogroup.com</p>
           <p className="text-sm text-gray-400 mt-1">Lima, Perú</p>
           <div className="flex space-x-4 mt-4">
             <a href="https://facebook.com" target="_blank" aria-label="Facebook">

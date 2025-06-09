@@ -20,7 +20,7 @@ export default function HomePage() {
       <ContactForm />
       {/*<Testimonials />*/}
       {/*<Clients />*/}
-      <SuccessCases />
+      {/*<SuccessCases />*/}
       <CtaBanner />
       <Footer />
       <WhatsAppButton /> {/* 👈 Agregado aquí */}
