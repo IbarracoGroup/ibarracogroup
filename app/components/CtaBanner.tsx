@@ -15,7 +15,7 @@ export default function CtaBanner() {
         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-lg">
           ¿Listo para transformar tu negocio?
         </h2>
-        <p className="text-lg md:text-xl mb-8 text-white/90 font-light">
+        <p className="text-lg md:text-xl mb-8 text-lime-600 font-light">
           Más que consultoría digital: integramos soluciones tecnológicas, visión estratégica y profesionales clave para lograr resultados sostenibles.
         </p>
         <a
