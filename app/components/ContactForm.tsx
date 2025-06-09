@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { CheckCircle, AlertTriangle, Loader2 } from 'lucide-react'
 
 export default function ContactForm() {
   const [success, setSuccess] = useState(false)
@@ -52,30 +53,30 @@ export default function ContactForm() {
   return (
     <section
       id="contacto"
-      className="relative py-24 px-6"
+      className="relative py-24 px-6 bg-gradient-to-br from-white via-gray-50 to-lime-50"
     >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start bg-white rounded-3xl shadow-2xl p-12">
         {/* Título izquierdo */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-lime-500 leading-tight mb-4">
-            Lleva tu negocio al <span className="text-white">futuro</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-lime-600 leading-tight mb-6">
+            Lleva tu negocio al <span className="text-gray-900">futuro</span>
           </h2>
-          <p className="text-lg text-black">
+          <p className="text-lg text-gray-700 leading-relaxed">
             Conéctate con nosotros y descubre cómo acelerar tu transformación digital con tecnología y talento.
           </p>
         </div>
 
         {/* Formulario derecho */}
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="text" name="nombre" placeholder="Nombre" required className="form-input" />
-            <input type="text" name="apellido" placeholder="Apellido" required className="form-input" />
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <input type="text" name="nombre" placeholder="Nombre" required className="form-input rounded-xl border border-gray-300 px-4 py-3" />
+            <input type="text" name="apellido" placeholder="Apellido" required className="form-input rounded-xl border border-gray-300 px-4 py-3" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="email" name="email" placeholder="Email" required className="form-input" />
-            <input type="text" name="empresa" placeholder="Empresa" required className="form-input" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <input type="email" name="email" placeholder="Email corporativo" required className="form-input rounded-xl border border-gray-300 px-4 py-3" />
+            <input type="text" name="empresa" placeholder="Empresa o marca" required className="form-input rounded-xl border border-gray-300 px-4 py-3" />
           </div>
-          <select name="pais" required className="form-input">
+          <select name="pais" required className="form-select rounded-xl border border-gray-300 px-4 py-3">
             <option value="">Selecciona tu país...</option>
             <option value="Perú">Perú</option>
             <option value="México">México</option>
@@ -83,18 +84,18 @@ export default function ContactForm() {
             <option value="Argentina">Argentina</option>
             <option value="Otro">Otro</option>
           </select>
-          <textarea name="mensaje" placeholder="Mensaje" required className="form-input h-32 resize-none" />
+          <textarea name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." required className="form-textarea rounded-xl border border-gray-300 px-4 py-3 h-32 resize-none" />
 
-          <div className="flex items-start space-x-3">
+          <div className="flex items-start gap-3">
             <input type="checkbox" name="boletin" id="boletin" className="mt-1" />
-            <label htmlFor="boletin" className="text-sm text-black">
+            <label htmlFor="boletin" className="text-sm text-gray-700">
               Me gustaría recibir el boletín con recursos útiles y actualizaciones.
             </label>
           </div>
 
-          <p className="text-xs text-gray-300">
+          <p className="text-xs text-gray-500">
             Al completar este formulario, aceptas nuestra{' '}
-            <a href="/politica.html" target="_blank" className="text-lime-400 underline">
+            <a href="/politica.html" target="_blank" className="text-lime-600 underline">
               política de confidencialidad
             </a>.
           </p>
@@ -102,13 +103,21 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={loading}
-            className="bg-lime-400 text-black font-bold px-8 py-3 rounded-md hover:bg-lime-300 transition"
+            className="bg-lime-500 hover:bg-lime-600 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all flex items-center justify-center gap-2"
           >
-            {loading ? 'Enviando...' : 'Enviar'}
+            {loading ? <><Loader2 className="animate-spin w-5 h-5" /> Enviando...</> : 'Enviar'}
           </button>
 
-          {success && <p className="text-green-400 text-sm mt-3">✅ ¡Formulario enviado correctamente!</p>}
-          {error && <p className="text-red-400 text-sm mt-3">⚠️ {error}</p>}
+          {success && (
+            <p className="text-green-600 text-sm flex items-center gap-2">
+              <CheckCircle className="w-5 h-5" /> ¡Formulario enviado correctamente!
+            </p>
+          )}
+          {error && (
+            <p className="text-red-500 text-sm flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5" /> {error}
+            </p>
+          )}
         </form>
       </div>
     </section>
