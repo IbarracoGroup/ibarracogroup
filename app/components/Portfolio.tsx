@@ -7,18 +7,18 @@ export default function Portfolio() {
     {
       titulo: 'Página web de farmacia',
       url: '🌐 www.ibarracogroup.com',
-      imagen: '/assets/images/portafolio1.png'
+      img: '/assets/images/portafolio1.png'
     },
     {
       titulo: 'Página web de clínica dental',
       url: '📊 www.ibarracogroup.com',
-      imagen: '/assets/images/portafolio2.png'
+      img: '/assets/images/portafolio2.png'
     },
     {
       titulo: 'Página web de alimento para canes',
       url: '📰 www.ibarracogroup.com',
       
-      src: "/assets/images/portafolio3.png"
+      img: '/assets/images/portafolio3.png'
     }
   ]
 
@@ -47,8 +47,8 @@ export default function Portfolio() {
               key={index}
               className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <Image
-                src={proyecto.imagen}
+              <img
+                src={proyecto.img}
                 alt={proyecto.titulo}
                 width={600}
                 height={400}
