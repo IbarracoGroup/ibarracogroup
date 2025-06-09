@@ -37,7 +37,7 @@ export default function ContactForm() {
       if (result.ok) {
         setSuccess(true)
         const form = e.target as HTMLFormElement
-        if (form) form.reset()
+        form.reset()
         setTimeout(() => setSuccess(false), 5000)
       } else {
         throw new Error(result.error || 'Error al enviar')
@@ -50,14 +50,17 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="bg-gradient-to-br from-[#0f111a] to-[#1a1e2e] text-white py-24 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+    <section
+      id="contacto"
+      className="relative py-24 px-6"
+    >
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-10">
         {/* Título izquierdo */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-lime-400 leading-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-lime-500 leading-tight mb-4">
             Lleva tu negocio al <span className="text-white">futuro</span>
           </h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-gray-200">
             Conéctate con nosotros y descubre cómo acelerar tu transformación digital con tecnología y talento.
           </p>
         </div>
@@ -65,14 +68,14 @@ export default function ContactForm() {
         {/* Formulario derecho */}
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="text" name="nombre" placeholder="Nombre" required className="input" />
-            <input type="text" name="apellido" placeholder="Apellido" required className="input" />
+            <input type="text" name="nombre" placeholder="Nombre" required className="form-input" />
+            <input type="text" name="apellido" placeholder="Apellido" required className="form-input" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="email" name="email" placeholder="Email" required className="input" />
-            <input type="text" name="empresa" placeholder="Empresa" required className="input" />
+            <input type="email" name="email" placeholder="Email" required className="form-input" />
+            <input type="text" name="empresa" placeholder="Empresa" required className="form-input" />
           </div>
-          <select name="pais" required className="input">
+          <select name="pais" required className="form-input">
             <option value="">Selecciona tu país...</option>
             <option value="Perú">Perú</option>
             <option value="México">México</option>
@@ -80,16 +83,16 @@ export default function ContactForm() {
             <option value="Argentina">Argentina</option>
             <option value="Otro">Otro</option>
           </select>
-          <textarea name="mensaje" placeholder="Mensaje" required className="input h-32 resize-none"></textarea>
+          <textarea name="mensaje" placeholder="Mensaje" required className="form-input h-32 resize-none" />
 
           <div className="flex items-start space-x-3">
             <input type="checkbox" name="boletin" id="boletin" className="mt-1" />
-            <label htmlFor="boletin" className="text-sm">
+            <label htmlFor="boletin" className="text-sm text-white">
               Me gustaría recibir el boletín con recursos útiles y actualizaciones.
             </label>
           </div>
 
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-300">
             Al completar este formulario, aceptas nuestra{' '}
             <a href="/politica.html" target="_blank" className="text-lime-400 underline">
               política de confidencialidad
