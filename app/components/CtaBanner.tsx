@@ -7,7 +7,7 @@ export default function CtaBanner() {
   const enlaceWhatsApp = `https://wa.me/51999908810?text=${mensajeWhatsApp}`
 
   return (
-    <section className="bg-[#bfa173] text-white py-20 px-6 text-center relative overflow-hidden">
+    <section className="bg-[#bfa173] text-lime-600 py-20 px-6 text-center relative overflow-hidden">
       {/* Fondo decorativo opcional */}
       <div className="absolute inset-0 bg-[url('/fondo-patron.png')] opacity-5 pointer-events-none" />
       
