@@ -60,7 +60,7 @@ export default function ContactForm() {
           <h2 className="text-4xl md:text-5xl font-bold text-lime-500 leading-tight mb-4">
             Lleva tu negocio al <span className="text-white">futuro</span>
           </h2>
-          <p className="text-lg text-gray-200">
+          <p className="text-lg text-black">
             Conéctate con nosotros y descubre cómo acelerar tu transformación digital con tecnología y talento.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
 
           <div className="flex items-start space-x-3">
             <input type="checkbox" name="boletin" id="boletin" className="mt-1" />
-            <label htmlFor="boletin" className="text-sm text-white">
+            <label htmlFor="boletin" className="text-sm text-black">
               Me gustaría recibir el boletín con recursos útiles y actualizaciones.
             </label>
           </div>
