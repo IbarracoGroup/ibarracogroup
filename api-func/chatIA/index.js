@@ -1,31 +1,33 @@
 const { app } = require('@azure/functions');
-const { AzureKeyCredential } = require('@azure/openai');
+const { DefaultAzureCredential } = require('@azure/identity');
+const { OpenAIClient } = require('@azure/openai');
 
 const endpoint = 'https://openai-ibarracogroup.openai.azure.com/';
-const apiKey = '4vpn8equ1FhzSuEo96a7mcVFlbnG0uBvrhmi5rdCpvvVsEKLobegJQQJ99BFACYeBjFXJ3w3AAABACOGwnDj'; // Usa una sola (Clave 1 o 2)
+const deploymentName = 'gpt-35-turbo';
 
 app.http('chatIA', {
   methods: ['POST'],
   authLevel: 'anonymous',
   handler: async (req, context) => {
-    const { OpenAIClient } = require('@azure/openai');
-    const { messages } = await req.json();
-
-    const client = new OpenAIClient(endpoint, new AzureKeyCredential(apiKey));
     try {
-      const response = await client.getChatCompletions('gpt-35-turbo', messages, {
+      const { messages } = await req.json();
+
+      const credential = new DefaultAzureCredential(); // 👈 sin clave
+      const client = new OpenAIClient(endpoint, credential);
+
+      const response = await client.getChatCompletions(deploymentName, messages, {
         maxTokens: 1000,
-        temperature: 0.7
+        temperature: 0.7,
       });
 
       const reply = response.choices?.[0]?.message?.content || 'Lo siento, no entendí eso.';
       return { body: JSON.stringify({ reply }) };
     } catch (err) {
-      context.log('❌ Error:', err.message || err);
+      context.log('❌ Error en chatIA:', err);
       return {
         status: 500,
-        body: JSON.stringify({ error: 'Error interno en el servidor' })
+        body: JSON.stringify({ error: 'Error interno en el servidor' }),
       };
     }
-  }
+  },
 });
