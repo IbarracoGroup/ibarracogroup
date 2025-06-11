@@ -3,7 +3,7 @@ const { DefaultAzureCredential } = require('@azure/identity');
 const { OpenAIClient } = require('@azure/openai');
 
 const endpoint = 'https://openai-ibarracogroup.openai.azure.com/';
-const deploymentName = 'gpt-35-turbo';
+const deploymentName = 'gpt-35-turbo'; // ✅ Nombre exacto de tu implementación en Azure
 
 app.http('chatIA', {
   methods: ['POST'],
@@ -12,7 +12,7 @@ app.http('chatIA', {
     try {
       const { messages } = await req.json();
 
-      const credential = new DefaultAzureCredential(); // 👈 sin clave
+      const credential = new DefaultAzureCredential(); // Usando identidad administrada
       const client = new OpenAIClient(endpoint, credential);
 
       const response = await client.getChatCompletions(deploymentName, messages, {
