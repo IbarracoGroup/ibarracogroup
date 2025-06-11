@@ -30,7 +30,7 @@ export default function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-20 right-5 z-50">
       {!isOpen && (
         <button onClick={() => setIsOpen(true)} className="bg-lime-500 text-black px-4 py-2 rounded-full shadow-lg">
           💬 Asesor IA
