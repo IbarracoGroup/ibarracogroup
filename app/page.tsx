@@ -8,7 +8,8 @@ import Footer from './components/Footer'
 import Clients from './components/Clients'
 import SuccessCases from './components/SuccessCases'
 import CtaBanner from './components/CtaBanner'
-import WhatsAppButton from './components/WhatsAppButton' // 👈 Nuevo
+import WhatsAppButton from './components/WhatsAppButton' 
+import ChatWidget from './components/ChatWidget' // 👈 Nuevo
 
 export default function HomePage() {
   return (
@@ -23,7 +24,8 @@ export default function HomePage() {
       {/*<SuccessCases />*/}
       <CtaBanner />
       <Footer />
-      <WhatsAppButton /> {/* 👈 Agregado aquí */}
+      <WhatsAppButton />
+      <ChatWidget /> {/* 👈 Agregado aquí */}
     </>
   )
 }
