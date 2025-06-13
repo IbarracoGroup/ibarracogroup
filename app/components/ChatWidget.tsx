@@ -16,7 +16,7 @@ export default function ChatWidget() {
     setLoading(true)
 
     try {
-      const res = await fetch('/api/chatIA', {
+      const res = await fetch('https://ibarracogroup-api.azurewebsites.net/api/chatia', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newMessages })
