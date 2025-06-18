@@ -1,20 +1,21 @@
+require('dotenv').config(); // ← Asegúrate de tener esto arriba del todo
 const { DefaultAzureCredential } = require('@azure/identity');
 const { OpenAIClient } = require('@azure/openai');
-const axios = require('axios'); // Asegúrate de tener esto instalado
+const axios = require('axios');
 
 const endpoint = 'https://openai-ibarracogroup.openai.azure.com/';
 const deploymentName = 'gpt-35-turbo';
-const knowledgeUrl = 'https://ibarracostorage.blob.core.windows.net/ia-data/ibarraco-servicios.txt?sp=r&st=2025-06-18T18:59:57Z&se=2026-06-27T02:59:57Z&spr=https&sv=2024-11-04&sr=b&sig=hdULez2SfwHbDZRJm8gGAy6GP%2F5eL55K7RcqyM7eobY%3D';
+const knowledgeUrl = process.env.KNOWLEDGE_URL; // ← 🔐 usa variable desde .env.local
 
 module.exports = async function (context, req) {
   try {
     const { messages } = req.body;
 
-    // 🔍 Obtener contenido del archivo .txt desde el blob
+    // 🔍 Cargar contenido del archivo .txt (conocimiento)
     const blobResponse = await axios.get(knowledgeUrl);
     const knowledgeText = blobResponse.data;
 
-    // 🧠 Insertar el contexto como primer mensaje de tipo 'system'
+    // 🧠 Insertar el conocimiento como contexto inicial
     const fullMessages = [
       {
         role: 'system',
@@ -23,7 +24,7 @@ module.exports = async function (context, req) {
       ...messages
     ];
 
-    // 💬 Generar respuesta con Azure OpenAI
+    // 🧠 Obtener respuesta desde Azure OpenAI
     const credential = new DefaultAzureCredential();
     const client = new OpenAIClient(endpoint, credential);
 
