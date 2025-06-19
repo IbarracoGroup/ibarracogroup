@@ -13,12 +13,22 @@ export default function Services() {
         <>
           Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.
           <br />
-          <a
-            href="#planes"
-            className="inline-block mt-4 bg-secondary text-white text-sm font-semibold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition"
+        <a
+          href="/planes"
+          className="inline-flex items-center gap-2 bg-secondary text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#a48c5a] transition text-lg"
+        >
+          Ver planes
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Ver planes →
-          </a>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
         </>
       ),
     },
