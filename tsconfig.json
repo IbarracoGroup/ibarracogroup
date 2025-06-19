@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,19 +17,35 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".", // 👈 Esta línea es clave. Se asegura que las rutas sean relativas al proyecto raíz
+    "paths": {
+      "@/components/*": [
+        "app/components/*"
+      ],
+      "@/planes/*": [
+        "app/planes/*"
+      ],
+      "@/app/*": [
+        "app/*"
+      ]
+    },
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/components/*": ["app/components/*"],
-      "@/planes/*": ["app/planes/*"],
-      "@/app/*": ["app/*"]
-    }    
-    ,
-    "typeRoots": ["./types", "./node_modules/@types"]
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
