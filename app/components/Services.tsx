@@ -9,8 +9,18 @@ export default function Services() {
     },
     {
       titulo: 'Plataformas SaaS escalables',
-      descripcion:
-        'Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.',
+      descripcion: (
+        <>
+          Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.
+          <br />
+          <a
+            href="#planes"
+            className="inline-block mt-4 bg-secondary text-white text-sm font-semibold px-4 py-2 rounded-full shadow hover:bg-yellow-600 transition"
+          >
+            Ver planes →
+          </a>
+        </>
+      ),
     },
     {
       titulo: 'MVPs para validar modelos de negocio',

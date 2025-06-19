@@ -15,6 +15,10 @@ module.exports = async function (context, req) {
     const blobResponse = await axios.get(knowledgeUrl);
     const knowledgeText = blobResponse.data;
 
+    // ✅ Verificar que se cargó correctamente el contenido
+    context.log("📘 Texto cargado desde el blob:");
+    context.log(knowledgeText.slice(0, 200)); // Solo muestra primeros 200 caracteres
+
     // 🧠 Insertar el conocimiento como contexto inicial
     const fullMessages = [
       {
