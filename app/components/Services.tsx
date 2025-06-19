@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Services() {
   const servicios = [
     {
@@ -9,28 +11,12 @@ export default function Services() {
     },
     {
       titulo: 'Plataformas SaaS escalables',
-      descripcion: (
-        <>
-          Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.
-          <br />
-        <a
-          href="/planes"
-          className="inline-flex items-center gap-2 bg-secondary text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#a48c5a] transition text-lg"
-        >
-          Ver planes
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </a>
-        </>
-      ),
+      descripcion:
+        'Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.',
+      boton: {
+        texto: 'Ver planes',
+        url: '/planes',
+      },
     },
     {
       titulo: 'MVPs para validar modelos de negocio',
@@ -81,18 +67,43 @@ export default function Services() {
               <h3 className="text-xl font-semibold text-secondary mb-3 group-hover:text-blue-800 transition">
                 {servicio.titulo}
               </h3>
-              <p className="text-gray-600 text-sm">{servicio.descripcion}</p>
+
+              <div className="text-gray-600 text-sm space-y-4">
+                <p>{servicio.descripcion}</p>
+
+                {servicio.boton && (
+                  <Link href={servicio.boton.url}>
+                    <button className="inline-flex items-center gap-2 bg-secondary text-white font-semibold px-5 py-2 rounded-full shadow hover:bg-[#a48c5a] transition text-sm">
+                      {servicio.boton.texto}
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </button>
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* CTA al final */}
+        {/* CTA final (puedes mantenerlo o quitarlo si deseas dejar solo "Ver planes") */}
         <div className="mt-12">
           <a
             href="#contacto"
             className="inline-block bg-secondary text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#a48c5a] transition"
           >
-            Ver más soluciones → 
+            Ver más soluciones →
           </a>
         </div>
       </div>

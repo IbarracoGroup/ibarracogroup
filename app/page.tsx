@@ -18,7 +18,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <Services />
-      <PricingPlans /> {/* 👈 Insertado justo después de Servicios */}
+     {/* <PricingPlans />*/}
       <Portfolio />
       <ContactForm />
       {/*<Testimonials />*/}
