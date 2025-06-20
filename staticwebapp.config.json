@@ -1,9 +1,20 @@
 {
   "navigationFallback": {
-    "rewrite": "/",
-    "exclude": ["/assets/*", "/favicon.ico", "/robots.txt", "/api/*"]
+    "rewrite": "/index.html",
+    "exclude": [
+      "/assets/*",
+      "/favicon.ico",
+      "/robots.txt",
+      "/api/*",
+      "/_next/*",
+      "/static/*"
+    ]
   },
   "routes": [
+    {
+      "route": "/planes",
+      "rewrite": "/planes"
+    },
     {
       "route": "/api/*",
       "rewrite": "/api-func/api/$1"
