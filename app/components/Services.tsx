@@ -1,49 +1,49 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Services() {
   const servicios = [
     {
-      titulo: 'Sistemas de Gestión a Medida',
+      titulo: "Sistemas de Gestión a Medida",
       descripcion:
-        'Diseñamos plataformas inteligentes para integrar y optimizar procesos clave como finanzas, RR.HH., ventas o logística.',
+        "Diseñamos plataformas inteligentes para integrar y optimizar procesos clave como finanzas, RR.HH., ventas o logística.",
     },
     {
-      titulo: 'Plataformas SaaS escalables',
+      titulo: "Plataformas SaaS escalables",
       descripcion:
-        'Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.',
+        "Creamos soluciones SaaS robustas y sostenibles con modelos de negocio recurrentes, listos para escalar.",
       boton: {
-        texto: 'Ver planes',
-        url: '/planes',
+        texto: "Ver planes",
+        url: "/planes",
       },
     },
     {
-      titulo: 'MVPs para validar modelos de negocio',
+      titulo: "MVPs para validar modelos de negocio",
       descripcion:
-        'Desarrollamos productos mínimos viables listos para validar hipótesis de mercado rápidamente y con bajo riesgo.',
+        "Desarrollamos productos mínimos viables listos para validar hipótesis de mercado rápidamente y con bajo riesgo.",
     },
     {
-      titulo: 'Apps móviles con lógica de negocio',
+      titulo: "Apps móviles con lógica de negocio",
       descripcion:
-        'Aplicaciones conectadas a tus sistemas internos, optimizando la experiencia de tus usuarios y equipos.',
+        "Aplicaciones conectadas a tus sistemas internos, optimizando la experiencia de tus usuarios y equipos.",
     },
     {
-      titulo: 'Staffing Tecnológico Especializado',
+      titulo: "Staffing Tecnológico Especializado",
       descripcion:
-        'Integramos perfiles técnicos a tu equipo con agilidad, foco en resultados y alto estándar de calidad.',
+        "Integramos perfiles técnicos a tu equipo con agilidad, foco en resultados y alto estándar de calidad.",
     },
     {
-      titulo: 'Reclutamiento de Talento Tecnológico y Comercial',
+      titulo: "Reclutamiento de Talento Tecnológico y Comercial",
       descripcion:
-        'Seleccionamos perfiles técnicos, vendedores y personal operativo que se alineen con tu cultura y objetivos de negocio.',
+        "Seleccionamos perfiles técnicos, vendedores y personal operativo que se alineen con tu cultura y objetivos de negocio.",
     },
     {
-      titulo: 'Consultoría Estratégica en Transformación Digital',
+      titulo: "Consultoría Estratégica en Transformación Digital",
       descripcion:
-        'Acompañamos a tu equipo en la implementación de soluciones con mirada ágil, organizacional y orientada a resultados.',
+        "Acompañamos a tu equipo en la implementación de soluciones con mirada ágil, organizacional y orientada a resultados.",
     },
-  ]
+  ];
 
   return (
     <section
@@ -97,7 +97,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* CTA final (puedes mantenerlo o quitarlo si deseas dejar solo "Ver planes") */}
+        {/* Puedes mantener este CTA o eliminarlo */}
         <div className="mt-12">
           <a
             href="#contacto"
@@ -108,5 +108,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }

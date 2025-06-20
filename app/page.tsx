@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
-import PricingPlans from './components/PricingPlans' // 👈 Sección de precios
+// import PricingPlans from './components/PricingPlans' // 👈 Sección de precios
 import Portfolio from './components/Portfolio'
 import ContactForm from './components/ContactForm'
 import Testimonials from './components/Testimonials'
@@ -18,7 +18,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <Services />
-     {/* <PricingPlans />*/}
+      {/*<PricingPlans/>*/} {/* 👈 Oculto para no mostrar en Home */}
       <Portfolio />
       <ContactForm />
       {/*<Testimonials />*/}
