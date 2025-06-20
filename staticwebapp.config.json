@@ -1,6 +1,6 @@
 {
   "navigationFallback": {
-    "rewrite": "/",
+    "rewrite": "/index.html",
     "exclude": [
       "/assets/*",
       "/favicon.ico",
@@ -10,12 +10,7 @@
       "/static/*"
     ]
   },
-  "routes": [
-    {
-      "route": "/api/*",
-      "rewrite": "/api-func/api/$1"
-    }
-  ],
+  "routes": [],
   "responseOverrides": {
     "404": {
       "rewrite": "/_not-found",

@@ -1,11 +1,9 @@
-// next.config.ts
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // Importante para serverless build en Azure
-  reactStrictMode: true,
+  output: "export", // 👈 fuerza la generación de archivos estáticos para rutas como /planes
   experimental: {
-    appDir: true // Habilita App Router oficialmente
-  }
+    appDir: true,
+  },
 };
 
 export default nextConfig;
