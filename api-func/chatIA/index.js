@@ -5,13 +5,13 @@ const axios = require('axios');
 
 const endpoint = 'https://openai-ibarracogroup.openai.azure.com/';
 const deploymentName = 'gpt-35-turbo';
-const knowledgeUrl = process.env.KNOWLEDGE_URL; // ← 🔐 usa variable desde .env.local o desde Azure
+const knowledgeUrl = process.env.KNOWLEDGE_URL; // 🔐 usa variable desde .env.local o Azure
 
 module.exports = async function (context, req) {
   try {
     const { messages } = req.body;
 
-    // ✅ LOG extra para confirmar la URL cargada desde la variable
+    // ✅ Log: confirmamos que se está usando la URL correcta
     context.log("📎 KNOWLEDGE_URL utilizada:", knowledgeUrl);
 
     // 🔍 Cargar contenido del archivo .txt (conocimiento)
@@ -20,7 +20,7 @@ module.exports = async function (context, req) {
 
     // ✅ Verificar que se cargó correctamente el contenido
     context.log("📘 Texto cargado desde el blob:");
-    context.log(knowledgeText.slice(0, 200)); // Solo muestra primeros 200 caracteres
+    context.log(knowledgeText.slice(0, 200)); // Muestra primeros 200 caracteres
 
     // 🧠 Insertar el conocimiento como contexto inicial
     const fullMessages = [
@@ -47,9 +47,13 @@ module.exports = async function (context, req) {
     };
   } catch (err) {
     context.log('❌ Error en chatIA:', err.message || err);
+    context.log('📛 Stacktrace:', err.stack || 'No hay stack disponible');
     context.res = {
       status: 500,
-      body: { error: 'Error interno en el servidor' }
+      body: {
+        error: '❌ Error interno en el servidor',
+        detail: err.message || 'Error desconocido'
+      }
     };
   }
 };
