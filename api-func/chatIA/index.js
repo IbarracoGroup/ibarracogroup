@@ -5,11 +5,14 @@ const axios = require('axios');
 
 const endpoint = 'https://openai-ibarracogroup.openai.azure.com/';
 const deploymentName = 'gpt-35-turbo';
-const knowledgeUrl = process.env.KNOWLEDGE_URL; // ← 🔐 usa variable desde .env.local
+const knowledgeUrl = process.env.KNOWLEDGE_URL; // ← 🔐 usa variable desde .env.local o desde Azure
 
 module.exports = async function (context, req) {
   try {
     const { messages } = req.body;
+
+    // ✅ LOG extra para confirmar la URL cargada desde la variable
+    context.log("📎 KNOWLEDGE_URL utilizada:", knowledgeUrl);
 
     // 🔍 Cargar contenido del archivo .txt (conocimiento)
     const blobResponse = await axios.get(knowledgeUrl);
