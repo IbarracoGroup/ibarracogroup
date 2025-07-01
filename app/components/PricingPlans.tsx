@@ -44,8 +44,9 @@ const PricingPlans = () => {
       description: "Para negocios que quieren escalar con tecnología y estrategia.",
       features: [
         "Todo lo del plan PYME PLUS",
-        "CMS Autogestionable (WordPress o Headless)",
+        "1 campaña de marketing digital al mes (post o reel) diseñada para Facebook, Instagram o TikTok",
         "Email marketing (5,000 envíos/mes)",
+        "Asesoría básica para publicación y segmentación",
         "SEO avanzado + Google Analytics",
         "Embudos de conversión automatizados",
         "Acompañamiento estratégico mensual",
