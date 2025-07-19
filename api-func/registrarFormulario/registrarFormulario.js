@@ -1,78 +1,51 @@
-const { Connection, Request, TYPES } = require('tedious');
-const { DefaultAzureCredential } = require('@azure/identity');
-
-async function getAccessToken() {
-  const credential = new DefaultAzureCredential();
-  const tokenResponse = await credential.getToken('https://database.windows.net/');
-  return tokenResponse.token;
-}
+const { MongoClient } = require("mongodb");
 
 module.exports = async function (context, req) {
-  const { nombre, apellido, email, empresa, pais, mensaje, boletin } = req.body;
+  const uri = process.env.MONGO_URI;
 
-  const accessToken = await getAccessToken();
+  if (!uri) {
+    context.res = {
+      status: 500,
+      body: "MONGO_URI no está configurado en la aplicación.",
+    };
+    return;
+  }
 
-  const config = {
-    server: 'ibarracogroupserver.database.windows.net',
-    authentication: {
-      type: 'azure-active-directory-access-token',
-      options: { token: accessToken }
-    },
-    options: {
-      database: 'ibarracogroupdb',
-      encrypt: true
-    }
-  };
+  if (!req.body) {
+    context.res = {
+      status: 400,
+      body: "No se recibió ningún cuerpo en la solicitud.",
+    };
+    return;
+  }
 
-  return new Promise((resolve) => {
-    const connection = new Connection(config);
-
-    connection.on('connect', (err) => {
-      if (err) {
-        context.log('❌ Error de conexión:', err);
-        context.res = {
-          status: 500,
-          headers: { 'Content-Type': 'application/json' },
-          body: { ok: false, error: 'Error de conexión: ' + err.message }
-        };
-        return resolve();
-      }
-
-      const sql = `
-        INSERT INTO Formularios (Nombre, Apellido, Email, Empresa, Pais, Mensaje, Boletin)
-        VALUES (@nombre, @apellido, @correo, @empresa, @pais, @mensaje, @boletin)
-      `;
-
-      const request = new Request(sql, (err) => {
-        if (err) {
-          context.log('❌ Error SQL:', err);
-          context.res = {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-            body: { ok: false, error: 'Error al insertar: ' + err.message }
-          };
-        } else {
-          context.res = {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' },
-            body: { ok: true }
-          };
-        }
-        connection.close();
-        return resolve();
-      });
-
-      request.addParameter('nombre', TYPES.NVarChar, nombre);
-      request.addParameter('apellido', TYPES.NVarChar, apellido);
-      request.addParameter('correo', TYPES.NVarChar, email);
-      request.addParameter('empresa', TYPES.NVarChar, empresa);
-      request.addParameter('pais', TYPES.NVarChar, pais);
-      request.addParameter('mensaje', TYPES.NVarChar, mensaje);
-      request.addParameter('boletin', TYPES.Bit, boletin === true);
-
-      connection.execSql(request);
-    });
-
-    connection.connect();
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
   });
+
+  try {
+    await client.connect();
+
+    const database = client.db("ibarracogroup-db"); // 🏷️ NOMBRE DE TU BASE DE DATOS
+    const collection = database.collection("formularios"); // 🗃️ NOMBRE DE LA COLECCIÓN (tabla)
+
+    const result = await collection.insertOne(req.body);
+
+    context.res = {
+      status: 200,
+      body: {
+        message: "Formulario guardado correctamente.",
+        insertedId: result.insertedId,
+      },
+    };
+  } catch (error) {
+    context.log.error("Error al insertar en MongoDB:", error.message);
+    context.res = {
+      status: 500,
+      body: "Error al insertar en MongoDB.",
+    };
+  } finally {
+    await client.close();
+  }
 };
