@@ -35,13 +35,13 @@ export default function ContactForm() {
 
       const result = await res.json()
 
-      if (result.ok) {
+      if (res.ok) {
         setSuccess(true)
         const form = e.target as HTMLFormElement
         form.reset()
         setTimeout(() => setSuccess(false), 5000)
       } else {
-        throw new Error(result.error || 'Error al enviar')
+        throw new Error(result?.error || result?.message || 'Error al enviar')
       }
     } catch (err: any) {
       setError(err.message)
